@@ -1,0 +1,122 @@
+import React from 'react'
+class demo extends React.Compoenet{
+   render(){
+       return  <h1>hello</h1>
+    }
+}
+export default demo;
+import React,{Compoenet} from 'react'
+class demo extends Compoenet{
+  render(){
+       return <h1>hello</h1>
+    }
+}
+export default demo;
+2)function based 
+it doesnt have reactlife cylcle
+it is ajs pure function
+it is a staeless component
+but after react react 16.8 FBC becomes statefull
+Compoenet becomes of hooks concept
+-->there is no render method in function based component
+import React from 'react'
+function demo(){
+    return <h1> function based componet</h1>
+
+}
+export default demo1;
+
+Properties(props)
+-->unidirection
+-->pass data from parent to child
+-->immutable
+
+Rules of jsx
+Ways of creating elements
+Dom in js
+two-Ways
+
+
+
+
+HTML:<h1></h1>
+
+DOM:document.createElement("h1")
+console.log(h1);
+h1.textContent="hello"
+
+REACT:in two ways:
+1.React.createElement("tag-name","id/class or null","content/childern)
+eg:React.createElement("h1","null","hello")
+React.createElement("div",{id:"demo"},React.createElement("span":"null","I am span tag"))
+2.if there is more than one element.it should be wrapped inside parent element or fragment.
+eg:
+<div>
+<h1>hello</h1>
+<h1>hello1</h1>
+</div>
+
+
+<>-->fragment 16.8 used to save memory in virtual Dom
+<h1>hello</h1>
+<h1>hi</h1>
+</>
+3->use {} braces for expression
+eg;<h1>{s+s}</h1>
+
+-->state in react
+state is used to store data in same compoenent and update the data in the same componet
+-->state is mutable()-read and write
+syntax:
+import {useState} form 'react'
+let [state,setState]=useState(initial value)
+-->state it will initial value
+-->setState function used to update state
+-->react-form
+controlled form-uses virtual dom
+--use state hook and onChange event to fetch the data
+uncontrolled-form--uses real dom
+--use ref hook to fetch the data
+-->prventDefault-stops page reloading
+ways of using react
+1)using inline
+global
+external
+--------------------------------
+useRef hook in reactref stands for reference
+useRef uses real dom 
+useRef hook is having a property called current
+-->useRef is having called ref-->useRef is used for uncontrolled form
+
+syntax;-
+import {useRef} from 'react';
+let identifier =useRef(initial-value)
+-->List and keys in react
+-->List is used to iterate array of object using map() method
+-->Keys are used to track an element to know which element is created updated and deleted
+interpolation works by only backtick(bello escape key)
+-----------------------
+useContext hook in react
+-->useContext used to passs ao share data from one componet to multiple compoenent without passing props
+adv:-used to avoid props drilling
+syntax:-
+step1:-create a context and export it
+import React from 'react'
+ export let/var/context identifier=React.createContext()
+ step 2:-use provider to pass the value
+ <identifier.provider.value={}>
+ <Child>
+ <identifier.provider>
+ step 3:-
+ use consumer to use the value
+ <identifier.consumer>
+ {
+    cbf
+ }
+ </identifier.consumer>
+
+-->Passing from one compoenet to child component called drilling
+avoid props drilling using
+useContext
+HOC(higher order compoenent)
+Redux
